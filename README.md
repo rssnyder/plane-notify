@@ -111,7 +111,7 @@ Go to the repo settings and add the secrets for your config type.
 
 `todo`
 
-GHCR images are private by default, so safe to use as a cache.
+GHCR images are private by default, so safe to use as a cache. And a free github account comes with "500MB of Packages storage"!
 
 ### TODO
 
