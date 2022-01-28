@@ -125,6 +125,8 @@ Create a  new pushbullet api key, and add as an action secret under `apikey`
 
 GHCR images are private by default, so safe to use as a cache. And a free github account comes with "500MB of Packages storage"!
 
+Cache will update itself on the next run after a new commit.
+
 ### TODO
 
 -   General Cleanup
