@@ -10,6 +10,8 @@ jobs:
 
     - uses: actions/checkout@v2
 
+    - run: docker login -u publisher -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+
     - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:githubactions
 
     - run: |
@@ -22,8 +24,6 @@ jobs:
     - run: docker build -t ghcr.io/${GITHUB_REPOSITORY}:githubactions .
     
     - run: docker run plane-notify
-
-    - run: docker login -u publisher -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
     - run: docker push ghcr.io/${GITHUB_REPOSITORY}:githubactions
 
