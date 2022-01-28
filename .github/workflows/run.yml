@@ -1,7 +1,7 @@
 on: 
   workflow_dispatch:
-#   schedule:
-#     - cron: '*/15 * * * *'
+  schedule:
+    - cron: '*/15 * * * *'
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
 
     - run: |
         sed -i "s|webhookurl|${LOG_DISCORD_WEBHOOK_URL}|g" configs/mainconf.ini
-        sed -i "s|webhookurl|${DISCORD_WEBHOOK_URL}|g" configs/plane1.ini
+        sed -i "s|webhookurl|${DISCORD_WEBHOOK_URL}|g" configs/plane*.ini
         sed -i "s|ckhere|${ckhere}|g" configs/plane1.ini
         sed -i "s|cshere|${cshere}|g" configs/plane1.ini
         sed -i "s|athere|${athere}|g" configs/plane1.ini
