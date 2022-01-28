@@ -16,8 +16,6 @@ jobs:
 
     - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:githubactions
-
     - run: |
         sed -i "s|webhookurl|${LOG_DISCORD_WEBHOOK_URL}|g" configs/mainconf.ini
         sed -i "s|webhookurl|${DISCORD_WEBHOOK_URL}|g" configs/plane1.ini
@@ -25,7 +23,7 @@ jobs:
         LOG_DISCORD_WEBHOOK_URL: ${{ secrets.LOG_DISCORD_WEBHOOK_URL }}
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-    - run: docker build -t ghcr.io/${GITHUB_REPOSITORY}:githubactions .
+    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:githubactions || docker build -t ghcr.io/${GITHUB_REPOSITORY}:githubactions .
     
     - run: docker run plane-notify:githubactions
 
