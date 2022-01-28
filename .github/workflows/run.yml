@@ -33,9 +33,9 @@ jobs:
         atshere: ${{ secrets.atshere }}
         apikey: ${{ secrets.apikey }}
 
-    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:gha || docker build -t ghcr.io/${GITHUB_REPOSITORY}:gha .
+    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA} || docker build -t ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA} .
     
-    - run: docker run ghcr.io/${GITHUB_REPOSITORY}:gha
+    - run: docker run ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
 
-    - run: docker push ghcr.io/${GITHUB_REPOSITORY}:gha
+    - run: docker push ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
 
