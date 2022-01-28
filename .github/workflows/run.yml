@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: |
-        sed -i "s/webhookurl/$LOG_DISCORD_WEBHOOK_URL/g" configs/mainconf
-        sed -i "s/webhookurl/$DISCORD_WEBHOOK_URL/g" configs/plane1
+        sed -i "s/webhookurl/$LOG_DISCORD_WEBHOOK_URL/g" configs/mainconf.ini
+        sed -i "s/webhookurl/$DISCORD_WEBHOOK_URL/g" configs/plane1.ini
       env:
         LOG_DISCORD_WEBHOOK_URL: ${{ secrets.LOG_DISCORD_WEBHOOK_URL }}
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
