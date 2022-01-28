@@ -1,0 +1,17 @@
+name: Run
+
+on: 
+  workflow_dispatch:
+#   schedule:
+#     - cron: '*/15 * * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - run: docker build -t plane-notify .
+    
+    - run: docker run plane-notify
