@@ -3,10 +3,11 @@ on:
 #   schedule:
 #     - cron: '*/15 * * * *'
 
-jobs:
-  permissions:
+permissions:
     contents: read
     packages: write
+
+jobs:
   run:
     runs-on: ubuntu-latest
     steps:
