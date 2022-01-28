@@ -23,9 +23,9 @@ jobs:
         LOG_DISCORD_WEBHOOK_URL: ${{ secrets.LOG_DISCORD_WEBHOOK_URL }}
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:githubactions || docker build -t ghcr.io/${GITHUB_REPOSITORY}:githubactions .
+    - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:gha || docker build -t ghcr.io/${GITHUB_REPOSITORY}:gha .
     
-    - run: docker run ghcr.io/${GITHUB_REPOSITORY}:githubactions
+    - run: docker run ghcr.io/${GITHUB_REPOSITORY}:gha
 
-    - run: docker push ghcr.io/${GITHUB_REPOSITORY}:githubactions
+    - run: docker push ghcr.io/${GITHUB_REPOSITORY}:gha
 
