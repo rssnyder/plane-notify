@@ -184,16 +184,16 @@ try:
         footer = "-------- " + str(running_Count) + " -------- " + str(datetime_tz.strftime("%I:%M:%S %p")) + " ------------------------Elapsed Time- " + str(round(elapsed_calc_time, 3)) + " -------------------------------------"
         print (Back.GREEN + Fore.BLACK + footer[0:100] + Style.RESET_ALL)
 
-        sleep_sec = 30
-        for i in range(sleep_sec,0,-1):
-            if i < 10:
-                i = " " + str(i)
-            sys.stdout.write("\r")
-            sys.stdout.write(Back.RED + "Sleep {00000000}".format(i) + Style.RESET_ALL)
-            sys.stdout.flush()
-            time.sleep(1)
-        sys.stdout.write(Back.RED + ('\x1b[1K\r' +"Slept for " +str(sleep_sec)) + Style.RESET_ALL)
-        print()
+        # sleep_sec = 30
+        # for i in range(sleep_sec,0,-1):
+        #     if i < 10:
+        #         i = " " + str(i)
+        #     sys.stdout.write("\r")
+        #     sys.stdout.write(Back.RED + "Sleep {00000000}".format(i) + Style.RESET_ALL)
+        #     sys.stdout.flush()
+        #     time.sleep(1)
+        # sys.stdout.write(Back.RED + ('\x1b[1K\r' +"Slept for " +str(sleep_sec)) + Style.RESET_ALL)
+        # print()
 except KeyboardInterrupt as e:
     print(e)
     if main_config.getboolean('DISCORD', 'ENABLE'):

@@ -103,6 +103,14 @@ docker-compose up -d
 
 After running this command, dut to the `-d` flag the container will be running in the background. To see the logs of the docker 
 
+## Using with Github Actions
+
+[Fork this repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) into your own github account.
+
+Go to the repo settings and add the secrets for your config type.
+
+`todo`
+
 ### TODO
 
 -   General Cleanup
