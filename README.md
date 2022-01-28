@@ -111,6 +111,8 @@ Go to the repo settings and add the secrets for your config type.
 
 `todo`
 
+GHCR images are private by default, so safe to use as a cache.
+
 ### TODO
 
 -   General Cleanup

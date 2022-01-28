@@ -194,6 +194,7 @@ try:
         #     time.sleep(1)
         # sys.stdout.write(Back.RED + ('\x1b[1K\r' +"Slept for " +str(sleep_sec)) + Style.RESET_ALL)
         # print()
+        sys.exit(0)
 except KeyboardInterrupt as e:
     print(e)
     if main_config.getboolean('DISCORD', 'ENABLE'):
