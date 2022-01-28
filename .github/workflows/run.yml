@@ -27,7 +27,7 @@ jobs:
 
     - run: docker build -t ghcr.io/${GITHUB_REPOSITORY}:githubactions .
     
-    - run: docker run plane-notify
+    - run: docker run plane-notify:githubactions
 
     - run: docker push ghcr.io/${GITHUB_REPOSITORY}:githubactions
 
