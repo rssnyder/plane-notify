@@ -4,6 +4,9 @@ on:
 #     - cron: '*/15 * * * *'
 
 jobs:
+  permissions:
+    contents: read
+    packages: write
   run:
     runs-on: ubuntu-latest
     steps:
