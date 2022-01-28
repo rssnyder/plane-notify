@@ -19,9 +19,19 @@ jobs:
     - run: |
         sed -i "s|webhookurl|${LOG_DISCORD_WEBHOOK_URL}|g" configs/mainconf.ini
         sed -i "s|webhookurl|${DISCORD_WEBHOOK_URL}|g" configs/plane1.ini
+        sed -i "s|ckhere|${ckhere}|g" configs/plane1.ini
+        sed -i "s|cshere|${cshere}|g" configs/plane1.ini
+        sed -i "s|athere|${athere}|g" configs/plane1.ini
+        sed -i "s|atshere|${atshere}|g" configs/plane1.ini
+        sed -i "s|apikey|${apikey}|g" configs/plane1.ini
       env:
         LOG_DISCORD_WEBHOOK_URL: ${{ secrets.LOG_DISCORD_WEBHOOK_URL }}
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        ckhere: ${{ secrets.ckhere }}
+        cshere: ${{ secrets.cshere }}
+        athere: ${{ secrets.athere }}
+        atshere: ${{ secrets.atshere }}
+        apikey: ${{ secrets.apikey }}
 
     - run: docker pull ghcr.io/${GITHUB_REPOSITORY}:gha || docker build -t ghcr.io/${GITHUB_REPOSITORY}:gha .
     

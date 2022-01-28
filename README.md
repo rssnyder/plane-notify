@@ -109,7 +109,19 @@ After running this command, dut to the `-d` flag the container will be running i
 
 Go to the repo settings and add the secrets for your config type.
 
-`todo`
+### Discord
+
+Fill in discord settings in config files.
+
+[Create a new webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), and add as an action secret under `LOG_DISCORD_WEBHOOK_URL` or `DISCORD_WEBHOOK_URL`.
+
+### Twitter
+
+Create twitter api keys, and add as an action secret under `ckhere`, `cshere`, `cshere`, `athere`, and `atshere`.
+
+### Pushbullet
+
+Create a  new pushbullet api key, and add as an action secret under `apikey`
 
 GHCR images are private by default, so safe to use as a cache. And a free github account comes with "500MB of Packages storage"!
 
